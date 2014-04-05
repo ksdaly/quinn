@@ -58,3 +58,7 @@ end
 group :test do
   gem 'rake'
 end
+
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
