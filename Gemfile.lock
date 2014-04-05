@@ -164,6 +164,7 @@ DEPENDENCIES
   pry-rails
   quiet_assets
   rails (= 4.0.0)
+  rake
   rspec-rails
   sass-rails (~> 4.0.0)
   sdoc

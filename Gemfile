@@ -55,4 +55,6 @@ group :test, :development do
   gem 'dotenv-rails'
 end
 
-
+group :test do
+  gem 'rake'
+end
