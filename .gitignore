@@ -16,4 +16,4 @@
 /tmp
 
 #ignore database.yml
-/config/databse.yml
+/config/database.yml
