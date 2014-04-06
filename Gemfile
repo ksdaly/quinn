@@ -64,3 +64,7 @@ gem 'neat'
 gem 'bitters'
 
 gem 'unicorn'
+
+group :production do
+  gem 'rails_12factor'
+end
