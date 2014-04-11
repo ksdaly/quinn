@@ -63,6 +63,7 @@ end
 gem 'bourbon'
 gem 'neat'
 gem 'bitters'
+gem 'slim'
 
 gem 'unicorn'
 
