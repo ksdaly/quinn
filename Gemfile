@@ -53,6 +53,7 @@ group :test, :development do
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'dotenv-rails'
+  gem 'launchy'
 end
 
 group :test do
@@ -68,3 +69,5 @@ gem 'unicorn'
 group :production do
   gem 'rails_12factor'
 end
+
+gem 'devise'
