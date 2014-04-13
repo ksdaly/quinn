@@ -12,8 +12,8 @@ feature 'user signs in',%Q{
   # * If I am already signed in, I can't sign in again
 
   scenario 'an existing user specifys a valid email and password' do
-    user = FactoryGirl.create(:user)
-    visit root_path
+    user = create(:user)
+    visit new_user_session_path
     fill_in 'user_email', with: user.email
     fill_in 'user_password', with: user.password
     click_button 'Sign in'
@@ -22,7 +22,7 @@ feature 'user signs in',%Q{
   end
 
   scenario 'a non-existent user email and password is supplied' do
-    visit root_path
+    visit new_user_session_path
     fill_in 'user_email', with: 'nobody@example.com'
     fill_in 'user_password', with: 'password'
     click_button 'Sign in'
@@ -32,8 +32,8 @@ feature 'user signs in',%Q{
   end
 
   scenario 'an existing email with the wrong password is denied access' do
-    user = FactoryGirl.create(:user)
-    visit root_path
+    user = create(:user)
+    visit new_user_session_path
     fill_in 'user_email', with: user.email
     fill_in 'user_password', with: 'wrongpassword'
     click_button 'Sign in'
@@ -42,7 +42,7 @@ feature 'user signs in',%Q{
   end
 
   scenario 'an authenticated user cannot re-sign-in' do
-    user = FactoryGirl.create(:user)
+    user = create(:user)
     sign_in_as(user)
     expect(page).to have_content('Sign out')
     expect(page).to_not have_content('Sign in')

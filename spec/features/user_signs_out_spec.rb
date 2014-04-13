@@ -12,7 +12,7 @@ feature 'user signs out',%Q{
   # * If I am signed out, I have the option of signing in
 
   scenario 'user signs out' do
-    user = FactoryGirl.create(:user)
+    user = create(:user)
     sign_in_as(user)
     click_on 'Sign out'
     expect(page).to have_content('Sign in')

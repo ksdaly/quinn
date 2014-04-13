@@ -11,4 +11,13 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
+  def require_user(resource)
+    unless current_user.id == resource.user.id
+      access_denied
+    end
+  end
+
+  def after_sign_in_path_for(resource)
+    authenticated_root_path
+  end
 end
