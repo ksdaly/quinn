@@ -79,4 +79,13 @@ Quinn::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.action_mailer.default_url_options = { host: 'quinn.herokuapp.com' }
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address: "smtp.mandrillapp.com",
+    port: 587,
+    user_name: ENV['MANDRILL_USERNAME'],
+    password: ENV['MANDRILL_APIKEY']
+  }
 end

@@ -72,3 +72,5 @@ group :production do
 end
 
 gem 'devise'
+
+gem 'mandrill-api'
