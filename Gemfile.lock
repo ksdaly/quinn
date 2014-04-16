@@ -65,7 +65,11 @@ GEM
     execjs (2.0.2)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
+    griddler (0.6.4)
+      htmlentities
+      rails (>= 3.2.0)
     hike (1.2.3)
+    htmlentities (4.3.1)
     i18n (0.6.9)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -201,6 +205,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl
+  griddler
   jbuilder (~> 1.2)
   jquery-rails
   launchy
