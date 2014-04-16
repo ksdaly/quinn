@@ -78,7 +78,7 @@ Quinn::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.default_url_options = { host: 'quinn.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'quinn.ksdaly.com' }
 
   config.action_mailer.delivery_method = :smtp
 
@@ -87,5 +87,7 @@ Quinn::Application.configure do
     port: 587,
     user_name: ENV['MANDRILL_USERNAME'],
     password: ENV['MANDRILL_APIKEY']
+    domain: 'heroku.com',
+    authentication: :plain
   }
 end

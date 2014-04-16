@@ -1,0 +1,12 @@
+h1 Posts
+
+- if @posts.count > 0
+  - @posts.each do |post|
+    blockquote
+      p
+        = post.body
+      small
+        = post.email
+- else
+  p
+    em Oops, doesn't look like there are any posts yet.

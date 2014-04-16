@@ -74,3 +74,4 @@ end
 gem 'devise'
 
 gem 'mandrill-api'
+gem 'griddler'
