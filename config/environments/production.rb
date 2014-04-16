@@ -87,7 +87,5 @@ Quinn::Application.configure do
     port: 587,
     user_name: ENV['MANDRILL_USERNAME'],
     password: ENV['MANDRILL_APIKEY']
-    domain: 'heroku.com',
-    authentication: :plain
   }
 end
