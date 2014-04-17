@@ -12,4 +12,12 @@ describe User do
     expect(post.user).to eql(user)
   end
 
+  it 'does not create a post if there is no associated user' do
+    initial_count = Post.count
+    email = build(:email)
+    post = EmailProcessor.process(email)
+
+    expect(Post.count).to eql(initial_count)
+  end
+
 end
