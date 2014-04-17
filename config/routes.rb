@@ -11,8 +11,7 @@ Quinn::Application.routes.draw do
   resources :users
   resources :posts
 
-  # mount_griddler
+  # mandrill test route
   # get "/email_processor", to: proc { [200, {}, ["OK"]] }, as: "mandrill_head_test_request"
 
-  # mount_griddler
 end

@@ -1,6 +1,31 @@
 FactoryGirl.define do
   factory :user do
-    sequence (:email) {|n|"kate#{n}@example.com"}
+    sequence (:email) { |n| "kate#{n}@example.com" }
     password '12345678'
+  end
+
+  factory :email, class: OpenStruct do
+    # Assumes Griddler.configure.to is :hash (default)
+    to [{ full: 'to_user@email.com', email: 'to_user@email.com', token: 'to_user', host: 'email.com', name: nil }]
+    from 'user@email.com'
+    subject 'email subject'
+    body 'Hello!'
+    attachments {[]}
+
+  #   trait :with_attachment do
+  #     attachments {[
+  #       ActionDispatch::Http::UploadedFile.new({
+  #         filename: 'img.png',
+  #         type: 'image/png',
+  #         tempfile: File.new("#{File.expand_path File.dirname(__FILE__)}/fixtures/img.png")
+  #       })
+  #     ]}
+  #   end
+  end
+
+  factory :post do
+    sequence (:body) { |n| "hello from Mandrill #{n}"}
+    sequence(:email) { |n| "kate#{n}@example.com" }
+    user
   end
 end
