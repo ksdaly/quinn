@@ -1,7 +1,15 @@
 class EmailProcessor
   def self.process(email)
     user = user(email)
-    Post.create!({ body: email.body, email: email.from, user: user }) if user.present?
+    Post.create!(arguments(email, user)) if user.present?
+  end
+
+  def self.arguments(email, user)
+    {
+      body: email.raw_html,
+      email: email.from,
+      user: user
+    }
   end
 
   def self.user(email)
