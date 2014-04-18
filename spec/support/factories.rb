@@ -10,6 +10,7 @@ FactoryGirl.define do
     from 'user@email.com'
     subject 'email subject'
     body 'Hello!'
+    raw_html '<div dir=\"ltr\">This is the first line,<div>this is a new line.</div><div>Regards,</div><div>Kate</div></div>\n\n'
     attachments {[]}
 
   #   trait :with_attachment do

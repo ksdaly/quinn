@@ -7,7 +7,7 @@ describe User do
     email = build(:email, from: user.email)
     post = EmailProcessor.process(email)
 
-    expect(post.body).to eql(email.body)
+    expect(post.body).to eql(email.raw_html)
     expect(post.email).to eql(email.from)
     expect(post.user).to eql(user)
   end
