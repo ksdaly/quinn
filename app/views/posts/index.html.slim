@@ -4,7 +4,7 @@ h1 Posts
   - @posts.each do |post|
     blockquote
       p
-        = post.body
+        = post.body.html_safe
       small
         = post.email
 - else
