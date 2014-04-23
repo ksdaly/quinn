@@ -14,6 +14,7 @@ feature 'User signs up', %Q{
   # * After signing up, user is redirected to a new health profile;
 
   scenario 'with valid infomration' do
+    initial_user_count = User.count
     visit new_user_registration_path
     fill_in 'user_email', with: 'kate@example.com'
     fill_in 'user_password', with: '12345678'
@@ -21,7 +22,7 @@ feature 'User signs up', %Q{
     click_button 'Sign up'
     expect(page).to have_content('You have signed up successfully')
     expect(page).to_not have_content('Sign up')
-    expect(User.count).to eql(1)
+    expect(User.count).to eql(initial_user_count + 1)
   end
 
   scenario 'with missing information' do
